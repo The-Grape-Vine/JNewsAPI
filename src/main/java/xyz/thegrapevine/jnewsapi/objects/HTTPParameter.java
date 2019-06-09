@@ -1,4 +1,4 @@
-package io.github.rainestormee.jnewsapi.objects;
+package xyz.thegrapevine.jnewsapi.objects;
 
 public class HTTPParameter {
 

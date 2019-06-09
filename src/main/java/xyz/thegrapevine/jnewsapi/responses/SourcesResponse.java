@@ -1,6 +1,6 @@
-package io.github.rainestormee.jnewsapi.responses;
+package xyz.thegrapevine.jnewsapi.responses;
 
-import io.github.rainestormee.jnewsapi.objects.NewsSource;
+import xyz.thegrapevine.jnewsapi.objects.NewsSource;
 
 import java.util.List;
 

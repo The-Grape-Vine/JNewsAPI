@@ -1,4 +1,4 @@
-package io.github.rainestormee.jnewsapi.exceptions;
+package xyz.thegrapevine.jnewsapi.exceptions;
 
 public class NewsAPIException extends Exception {
 

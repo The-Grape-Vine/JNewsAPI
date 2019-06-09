@@ -1,4 +1,4 @@
-package io.github.rainestormee.jnewsapi.responses;
+package xyz.thegrapevine.jnewsapi.responses;
 
 public interface NewsResponse {
 

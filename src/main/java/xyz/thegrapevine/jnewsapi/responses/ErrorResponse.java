@@ -1,5 +1,9 @@
-package io.github.rainestormee.jnewsapi.responses;
+package xyz.thegrapevine.jnewsapi.responses;
 
+/**
+ * A serverside error response.
+ * @author @rainestormee
+ */
 public class ErrorResponse implements NewsResponse {
 
     private String status;

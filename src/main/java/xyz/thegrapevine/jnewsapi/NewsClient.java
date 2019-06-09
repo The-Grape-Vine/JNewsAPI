@@ -1,13 +1,13 @@
-package io.github.rainestormee.jnewsapi;
+package xyz.thegrapevine.jnewsapi;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
-import io.github.rainestormee.jnewsapi.exceptions.NewsAPIException;
-import io.github.rainestormee.jnewsapi.objects.HTTPParameter;
-import io.github.rainestormee.jnewsapi.responses.*;
+import xyz.thegrapevine.jnewsapi.exceptions.NewsAPIException;
+import xyz.thegrapevine.jnewsapi.objects.HTTPParameter;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import xyz.thegrapevine.jnewsapi.responses.*;
 
 import java.net.URLEncoder;
 import java.util.Arrays;
@@ -20,19 +20,46 @@ public class NewsClient {
     private OkHttpClient client;
     private String key;
 
+    /**
+     * Instantiates the news client.
+     *
+     * @param key Token to connect to the API with.
+     * @author @rainestormee
+     */
     public NewsClient(String key) {
         client = new OkHttpClient();
         this.key = key;
     }
 
-    public TopHeadlinesResponse topheadlines(HTTPParameter... args) throws NewsAPIException {
+    /**
+     * Gets the top headlines of the day.
+     * @param args Array of parameters to pass to the client.
+     * @return A {@link TopHeadlinesResponse} object.
+     * @throws NewsAPIException A custom exception for the client.
+     * @author @rainestormee
+     */
+    public TopHeadlinesResponse topHeadlines(HTTPParameter... args) throws NewsAPIException {
         return get(TopHeadlinesResponse.class, "top-headlines", args);
     }
 
+    /**
+     * Returns a detailed list of sources.
+     * @param args Array of parameters to pass to the client.
+     * @return A {@link SourcesResponse} object.
+     * @throws NewsAPIException A custom exception for the client.
+     * @author @rainestormee
+     */
     public SourcesResponse sources(HTTPParameter... args) throws NewsAPIException {
         return get(SourcesResponse.class, "sources", args);
     }
 
+    /**
+     * Returns everything related to a query.
+     * @param args Array of parameters to pass to the client.
+     * @return A {@link EverythingResponse} object.
+     * @throws NewsAPIException A custom exception for the client.
+     * @author @rainestormee
+     */
     public EverythingResponse everything(HTTPParameter... args) throws NewsAPIException {
        return get(EverythingResponse.class, "everything", args);
     }

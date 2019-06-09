@@ -1,9 +1,13 @@
-package io.github.rainestormee.jnewsapi.responses;
+package xyz.thegrapevine.jnewsapi.responses;
 
-import io.github.rainestormee.jnewsapi.objects.NewsArticle;
+import xyz.thegrapevine.jnewsapi.objects.NewsArticle;
 
 import java.util.List;
 
+/**
+ * Response of the /everything endpoint
+ * @author @rainestormee
+ */
 public class EverythingResponse implements NewsResponse {
 
     private String status;

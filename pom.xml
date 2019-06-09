@@ -4,23 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.rainestormee</groupId>
+    <groupId>xyz.thegrapevine</groupId>
     <artifactId>JNewsAPI</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-repo-maven-example</id>
+            <url>https://api.bintray.com/maven/thevineyard/jnewsapi/jnewsapi/;publish=1</url>
+        </repository>
+    </distributionManagement>
 
     <developers>
         <developer>
-            <id>rainestormee</id>
-            <name>Ryan Christopher Arrowsmith</name>
-            <timezone>Europe/London</timezone>
-            <url>https://rainestormee.github.io/</url>
-            <email>ryanarrowsmith01@gmail.com</email>
+            <id>thevineyard</id>
+            <name>The Vineyard</name>
+            <timezone>Australia/Melbourne</timezone>
+            <url>https://thegrapevine,xyz/</url>
+            <email>admin@thegrapevine.xyz</email>
             <roles>
                 <role>developer</role>
             </roles>
-            <properties>
-                <discord>Raine#8544</discord>
-            </properties>
         </developer>
     </developers>
 
@@ -32,6 +36,18 @@
             <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>10</source>
+                    <target>10</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <name>JNewsAPI</name>
     <description>Java wrapper for NewsAPI.org</description>

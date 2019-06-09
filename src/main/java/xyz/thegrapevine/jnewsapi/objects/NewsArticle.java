@@ -1,8 +1,8 @@
-package io.github.rainestormee.jnewsapi.objects;
+package xyz.thegrapevine.jnewsapi.objects;
 
 public class NewsArticle {
 
-    private NewsSource source;
+    private InternalNewsSource source;
     private String author;
     private String title;
     private String description;
@@ -15,7 +15,7 @@ public class NewsArticle {
 
     }
 
-    public NewsSource getSource() {
+    public InternalNewsSource getSource() {
         return source;
     }
 
