@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Response of the /everything endpoint
- * @author @rainestormee
+ * @author rainestormee
  */
 public class EverythingResponse implements NewsResponse {
 

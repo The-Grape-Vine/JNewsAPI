@@ -1,0 +1,115 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+
+plugins {
+    id "com.jfrog.bintray" version "1.8.4"
+    id "maven-publish"
+    id "java"
+}
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'com.squareup.okhttp3:okhttp:4.0.0-RC1'
+    compile 'com.google.code.gson:gson:2.8.5'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:RELEASE'
+}
+
+group = 'xyz.thegrapevine'
+version = '2.0.0'
+description = 'JNewsAPI'
+sourceCompatibility = '10'
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+javadoc.failOnError = false
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "thevineyard"
+            name "The Vineyard"
+            email "admin@thegrapevine.xyz"
+        }
+    }
+
+    scm {
+        url "https://github.com/The-Grape-Vine/JNewsAPI"
+    }
+}
+
+publishing {
+    publications {
+        mavenPublication(MavenPublication) {
+            from components.java
+            artifact sourcesJar {
+                classifier "sources"
+            }
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+            groupId 'xyz.thegrapevine'
+            artifactId 'JNewsAPI'
+            version '2.0.0'
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'A Java library wrapping newsapi.org, a JSON API of news.')
+                root.appendNode('name', 'JNewsAPI')
+                root.appendNode('url', 'https://github.com/The-Grape-Vine/JNewsAPI')
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}
+
+bintray {
+    user = System.getProperty('bintray.user')
+    key = System.getProperty('bintray.key')
+    publications = ['mavenPublication']
+
+    publish = true
+
+    pkg {
+        repo = 'JNewsAPI'
+        name = 'JNewsAPI'
+        userOrg = 'thevineyard'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/the-grape-vine/jnewsapi.git'
+        version {
+            name = '2.0.0'
+            desc = '2.0.0'
+            released  = new Date()
+        }
+    }
+}

@@ -24,7 +24,7 @@ public class NewsClient {
      * Instantiates the news client.
      *
      * @param key Token to connect to the API with.
-     * @author @rainestormee
+     * @author rainestormee
      */
     public NewsClient(String key) {
         client = new OkHttpClient();
@@ -36,7 +36,7 @@ public class NewsClient {
      * @param args Array of parameters to pass to the client.
      * @return A {@link TopHeadlinesResponse} object.
      * @throws NewsAPIException A custom exception for the client.
-     * @author @rainestormee
+     * @author rainestormee
      */
     public TopHeadlinesResponse topHeadlines(HTTPParameter... args) throws NewsAPIException {
         return get(TopHeadlinesResponse.class, "top-headlines", args);
@@ -47,7 +47,7 @@ public class NewsClient {
      * @param args Array of parameters to pass to the client.
      * @return A {@link SourcesResponse} object.
      * @throws NewsAPIException A custom exception for the client.
-     * @author @rainestormee
+     * @author rainestormee
      */
     public SourcesResponse sources(HTTPParameter... args) throws NewsAPIException {
         return get(SourcesResponse.class, "sources", args);
@@ -58,7 +58,7 @@ public class NewsClient {
      * @param args Array of parameters to pass to the client.
      * @return A {@link EverythingResponse} object.
      * @throws NewsAPIException A custom exception for the client.
-     * @author @rainestormee
+     * @author rainestormee
      */
     public EverythingResponse everything(HTTPParameter... args) throws NewsAPIException {
        return get(EverythingResponse.class, "everything", args);
