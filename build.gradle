@@ -21,13 +21,13 @@ repositories {
 }
 
 dependencies {
-    compile 'com.squareup.okhttp3:okhttp:4.0.0-RC1'
+    compile 'com.squareup.okhttp3:okhttp:3.14.2'
     compile 'com.google.code.gson:gson:2.8.5'
     testCompile 'org.junit.jupiter:junit-jupiter-api:RELEASE'
 }
 
 group = 'xyz.thegrapevine'
-version = '2.0.0'
+version = '2.0.1'
 description = 'JNewsAPI'
 sourceCompatibility = '10'
 
@@ -81,7 +81,7 @@ publishing {
             }
             groupId 'xyz.thegrapevine'
             artifactId 'JNewsAPI'
-            version '2.0.0'
+            version '2.0.1'
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'A Java library wrapping newsapi.org, a JSON API of news.')
@@ -107,8 +107,8 @@ bintray {
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/the-grape-vine/jnewsapi.git'
         version {
-            name = '2.0.0'
-            desc = '2.0.0'
+            name = '2.0.1'
+            desc = '2.0.1'
             released  = new Date()
         }
     }

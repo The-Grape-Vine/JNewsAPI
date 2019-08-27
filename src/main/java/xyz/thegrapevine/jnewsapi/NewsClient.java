@@ -42,6 +42,7 @@ public class NewsClient {
         return get(TopHeadlinesResponse.class, "top-headlines", args);
     }
 
+
     /**
      * Returns a detailed list of sources.
      * @param args Array of parameters to pass to the client.
